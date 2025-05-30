@@ -5,7 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>حول</title>
   <style>
-    /* نفس التنسيقات زي index */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-color: #fdfdfd;
+      padding-bottom: 70px;
+    }
     main {
       flex: 1;
       display: flex;
@@ -13,6 +21,7 @@
       align-items: center;
       justify-content: center;
       gap: 15px;
+      padding-bottom: 80px;
     }
     .btn {
       padding: 10px 20px;
@@ -28,10 +37,51 @@
     .telegram {
       background-color: #0088cc;
     }
+    .nav-bar {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: #fff;
+      border-top: 1px solid #ccc;
+      padding: 10px 0;
+      border-radius: 20px 20px 0 0;
+      box-shadow: 0 -1px 8px rgba(0,0,0,0.1);
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #007BFF;
+      text-decoration: none;
+      font-size: 12px;
+      transition: transform 0.2s ease;
+    }
+    .nav-item svg {
+      width: 26px;
+      height: 26px;
+      margin-bottom: 4px;
+      fill: currentColor;
+    }
+    .nav-item.active {
+      color: orange;
+    }
+    .shake {
+      animation: shake 0.4s;
+    }
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-4px); }
+      50% { transform: translateX(4px); }
+      75% { transform: translateX(-2px); }
+      100% { transform: translateX(0); }
+    }
   </style>
 </head>
 <body>
-
   <main>
     <h2>محمد حسن</h2>
     <button class="btn telegram" onclick="window.open('https://t.me/+201069338288', '_blank')">الدردشة عبر تلجرام</button>
@@ -64,6 +114,5 @@
       el.classList.add('shake');
     }
   </script>
-
 </body>
 </html>
