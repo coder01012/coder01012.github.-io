@@ -5,160 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>الملخصات</title>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background-color: #fff;
-      padding-bottom: 70px;
-    }
-
-    h2 {
-      text-align: center;
-      margin: 25px 0;
-      font-size: 22px;
-      color: #007BFF;
-    }
-
-    .buttons-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: 20px;
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    button.btn {
-      background-color: #007BFF;
-      border: none;
-      border-radius: 15px;
-      padding: 20px 10px;
-      color: white;
-      font-size: 18px;
-      font-weight: bold;
-      cursor: pointer;
-      text-align: center;
+    /* نفس التنسيقات زي index */
+    .buttons {
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      flex-wrap: wrap;
       justify-content: center;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-      height: 140px;
+      padding: 20px;
+      gap: 12px;
     }
-
-    button.btn:hover {
-      background-color: #0056b3;
-      transform: scale(1.05);
-    }
-
-    button.btn svg {
-      width: 60px;
-      height: 60px;
-      opacity: 0.2;
-      margin-bottom: 10px;
-    }
-
-    .nav-bar {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      background-color: #fff;
-      border-top: 1px solid #ccc;
-      padding: 10px 0;
-      border-radius: 20px 20px 0 0;
-      box-shadow: 0 -1px 8px rgba(0,0,0,0.1);
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
-
-    .nav-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      color: #007BFF;
-      text-decoration: none;
-      font-size: 12px;
-      transition: transform 0.2s ease;
-    }
-
-    .nav-item svg {
-      width: 26px;
-      height: 26px;
-      margin-bottom: 4px;
-      fill: currentColor;
-    }
-
-    .nav-item.active {
-      color: orange;
-    }
-
-    .shake {
-      animation: shake 0.4s;
-    }
-
-    @keyframes shake {
-      0% { transform: translateX(0); }
-      25% { transform: translateX(-4px); }
-      50% { transform: translateX(4px); }
-      75% { transform: translateX(-2px); }
-      100% { transform: translateX(0); }
+    .buttons button {
+      padding: 15px 25px;
+      font-size: 18px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      width: 80%;
     }
   </style>
 </head>
 <body>
 
-  <h2>اختر المادة لعرض ملخصاتها</h2>
-
-  <div class="buttons-container">
-    <button class="btn" onclick="goTo('عربي')">
-      <svg viewBox="0 0 100 100"><text x="20" y="60" font-size="60" fill="white">ع</text></svg>
-      <span>عربي</span>
-    </button>
-    <button class="btn" onclick="goTo('إنجليزي')">
-      <svg viewBox="0 0 100 100"><text x="25" y="70" font-size="70" fill="white">E</text></svg>
-      <span>إنجليزي</span>
-    </button>
-    <button class="btn" onclick="goTo('فيزياء')">
-      <svg viewBox="0 0 64 64"><polygon points="24 2 40 2 28 30 42 30 18 62 32 34 18 34" stroke="white" fill="none" stroke-width="6"/></svg>
-      <span>فيزياء</span>
-    </button>
-    <button class="btn" onclick="goTo('كيمياء')">
-      <svg viewBox="0 0 100 50"><text x="50" y="35" font-size="32" fill="white">NaCl</text></svg>
-      <span>كيمياء</span>
-    </button>
-    <button class="btn" onclick="goTo('أحياء')">
-      <svg viewBox="0 0 80 80">
-        <path d="M20 10 Q30 30 20 50 Q30 70 20 90" stroke="white" fill="none" stroke-width="4"/>
-        <path d="M40 10 Q30 30 40 50 Q30 70 40 90" stroke="white" fill="none" stroke-width="4"/>
-        <line x1="20" y1="10" x2="40" y2="10" stroke="white" stroke-width="4"/>
-        <line x1="20" y1="30" x2="40" y2="30" stroke="white" stroke-width="4"/>
-        <line x1="20" y1="50" x2="40" y2="50" stroke="white" stroke-width="4"/>
-        <line x1="20" y1="70" x2="40" y2="70" stroke="white" stroke-width="4"/>
-        <line x1="20" y1="90" x2="40" y2="90" stroke="white" stroke-width="4"/>
-      </svg>
-      <span>أحياء</span>
-    </button>
-    <button class="btn" onclick="goTo('رياضيات')">
-      <svg viewBox="0 0 100 100">
-        <polygon points="10,90 90,90 10,10" stroke="white" fill="none" stroke-width="5"/>
-        <line x1="50" y1="50" x2="10" y2="90" stroke="white" stroke-width="3" stroke-dasharray="8,6"/>
-        <text x="18" y="85" fill="white" font-size="14">30°</text>
-        <text x="55" y="20" fill="white" font-size="14">60°</text>
-      </svg>
-      <span>رياضيات</span>
-    </button>
-  </div>
+  <main>
+    <div class="buttons">
+      <button>عربي</button>
+      <button>رياضيات</button>
+      <button>علوم</button>
+      <button>دراسات</button>
+      <button>لغة إنجليزية</button>
+      <button>حاسب آلي</button>
+    </div>
+  </main>
 
   <div class="nav-bar">
     <a href="index.html" class="nav-item" onclick="shake(this)">
       <svg viewBox="0 0 24 24"><path d="M12 3l9 8h-3v9h-4v-6h-4v6H6v-9H3z"/></svg>
       <span>الرئيسية</span>
     </a>
+    <a href="assessments.html" class="nav-item" onclick="shake(this)">
+      <svg viewBox="0 0 24 24"><path d="M4 4h16v2H4V4zm0 6h10v2H4v-2zm0 6h16v2H4v-2z"/></svg>
+      <span>تقييمات</span>
+    </a>
     <a href="summaries.html" class="nav-item active" onclick="shake(this)">
-      <svg viewBox="0 0 24 24">
-        <path d="M6 4h12v2H6V4zm0 4h12v2H6V8zm0 4h12v6H6v-6z"/>
-      </svg>
+      <svg viewBox="0 0 24 24"><path d="M6 4h12v2H6V4zm0 4h12v2H6V8zm0 4h12v6H6v-6z"/></svg>
       <span>الملخصات</span>
     </a>
     <a href="about.html" class="nav-item" onclick="shake(this)">
@@ -168,11 +57,6 @@
   </div>
 
   <script>
-    function goTo(subject) {
-      const query = encodeURIComponent(subject + ' ملخصات');
-      window.open('https://www.google.com/search?q=' + query, '_blank');
-    }
-
     function shake(el) {
       el.classList.remove('shake');
       void el.offsetWidth;
