@@ -19,20 +19,35 @@
       padding: 20px;
       padding-bottom: 80px;
     }
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
+    .buttons-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      padding: 10px;
     }
-    .buttons button {
-      padding: 15px 25px;
-      font-size: 18px;
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      width: 80%;
+    .subject-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      background-color: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: #333;
+    }
+    .subject-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+    .subject-btn svg {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 8px;
     }
     .nav-bar {
       display: flex;
@@ -80,16 +95,54 @@
 </head>
 <body>
   <main>
-    <div class="buttons">
-      <button>عربي</button>
-      <button>رياضيات</button>
-      <button>علوم</button>
-      <button>دراسات</button>
-      <button>لغة إنجليزية</button>
-      <button>حاسب آلي</button>
+    <div class="buttons-grid">
+      <!-- الصف الأول -->
+      <a href="https://www.google.com/search?q=عربي" target="_blank" class="subject-btn" onclick="shake(this)">
+        <svg viewBox="0 0 24 24" fill="#007BFF">
+          <text x="12" y="18" text-anchor="middle" font-size="20" font-weight="bold">ع</text>
+        </svg>
+        <span>عربي</span>
+      </a>
+      <a href="https://www.google.com/search?q=لغة إنجليزية" target="_blank" class="subject-btn" onclick="shake(this)">
+        <svg viewBox="0 0 24 24" fill="#FF5722">
+          <text x="12" y="18" text-anchor="middle" font-size="20" font-weight="bold">E</text>
+        </svg>
+        <span>إنجليزي</span>
+      </a>
+
+      <!-- الصف الثاني -->
+      <a href="https://www.google.com/search?q=كيمياء" target="_blank" class="subject-btn" onclick="shake(this)">
+        <svg viewBox="0 0 24 24" fill="#9C27B0">
+          <path d="M17.2 3.8c-.4-.4-1-.4-1.4 0L12 7.6 8.2 3.8c-.4-.4-1-.4-1.4 0s-.4 1 0 1.4L10.6 9l-3.8 3.8c-.4.4-.4 1 0 1.4.2.2.4.3.7.3s.5-.1.7-.3L12 10.4l3.8 3.8c.2.2.5.3.7.3s.5-.1.7-.3c.4-.4.4-1 0-1.4L13.4 9l3.8-3.8c.4-.4.4-1 0-1.4z"/>
+          <path d="M17.2 13.8c-.4-.4-1-.4-1.4 0L12 17.6l-3.8-3.8c-.4-.4-1-.4-1.4 0s-.4 1 0 1.4l3.8 3.8-3.8 3.8c-.4.4-.4 1 0 1.4.2.2.4.3.7.3s.5-.1.7-.3l3.8-3.8 3.8 3.8c.2.2.5.3.7.3s.5-.1.7-.3c.4-.4.4-1 0-1.4L13.4 19l3.8-3.8c.4-.4.4-1 0-1.4z"/>
+        </svg>
+        <span>كيمياء</span>
+      </a>
+      <a href="https://www.google.com/search?q=فيزياء" target="_blank" class="subject-btn" onclick="shake(this)">
+        <svg viewBox="0 0 24 24" fill="#2196F3">
+          <path d="M7 2v11h3v9l7-12h-4l4-8z"/>
+        </svg>
+        <span>فيزياء</span>
+      </a>
+
+      <!-- الصف الثالث -->
+      <a href="https://www.google.com/search?q=أحياء" target="_blank" class="subject-btn" onclick="shake(this)">
+        <svg viewBox="0 0 24 24" fill="#4CAF50">
+          <path d="M12 3c-4.8 0-9 3.86-9 9 0 2.12.74 4.07 1.97 5.61L3 19.59 4.41 21l1.98-1.98C7.93 20.26 9.88 21 12 21c4.8 0 9-3.86 9-9 0-4.8-4.2-9-9-9zm0 16c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7z"/>
+          <path d="M12 7c-1.94 0-3.5 1.56-3.5 3.5S10.06 14 12 14s3.5-1.56 3.5-3.5S13.94 7 12 7zm0 5c-.83 0-1.5-.67-1.5-1.5S11.17 9 12 9s1.5.67 1.5 1.5S12.83 12 12 12z"/>
+        </svg>
+        <span>أحياء</span>
+      </a>
+      <a href="https://www.google.com/search?q=رياضيات" target="_blank" class="subject-btn" onclick="shake(this)">
+        <svg viewBox="0 0 24 24" fill="#FF9800">
+          <path d="M12 2L4 12l8 10 8-10z"/>
+        </svg>
+        <span>رياضيات</span>
+      </a>
     </div>
   </main>
 
+  <!-- شريط التنقل (بقي كما هو) -->
   <div class="nav-bar">
     <a href="index.html" class="nav-item" onclick="shake(this)">
       <svg viewBox="0 0 24 24"><path d="M12 3l9 8h-3v9h-4v-6h-4v6H6v-9H3z"/></svg>
@@ -117,4 +170,4 @@
     }
   </script>
 </body>
-</html>
+            </html>
